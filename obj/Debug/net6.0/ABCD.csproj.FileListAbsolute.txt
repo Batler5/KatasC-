@@ -1,0 +1,15 @@
+C:\Users\danik\ABCD\bin\Debug\net6.0\ABCD.exe
+C:\Users\danik\ABCD\bin\Debug\net6.0\ABCD.deps.json
+C:\Users\danik\ABCD\bin\Debug\net6.0\ABCD.runtimeconfig.json
+C:\Users\danik\ABCD\bin\Debug\net6.0\ABCD.dll
+C:\Users\danik\ABCD\bin\Debug\net6.0\ABCD.pdb
+C:\Users\danik\ABCD\obj\Debug\net6.0\ABCD.csproj.AssemblyReference.cache
+C:\Users\danik\ABCD\obj\Debug\net6.0\ABCD.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\danik\ABCD\obj\Debug\net6.0\ABCD.AssemblyInfoInputs.cache
+C:\Users\danik\ABCD\obj\Debug\net6.0\ABCD.AssemblyInfo.cs
+C:\Users\danik\ABCD\obj\Debug\net6.0\ABCD.csproj.CoreCompileInputs.cache
+C:\Users\danik\ABCD\obj\Debug\net6.0\ABCD.dll
+C:\Users\danik\ABCD\obj\Debug\net6.0\refint\ABCD.dll
+C:\Users\danik\ABCD\obj\Debug\net6.0\ABCD.pdb
+C:\Users\danik\ABCD\obj\Debug\net6.0\ABCD.genruntimeconfig.cache
+C:\Users\danik\ABCD\obj\Debug\net6.0\ref\ABCD.dll
