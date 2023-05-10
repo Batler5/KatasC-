@@ -201,12 +201,7 @@
 }
         class katas
         {
-                /* public static string DecodeMorse(string morseCode)
-         {
-             var words = morseCode.Trim().Split(new[] { "   " }, StringSplitOptions.None);
-             var translatedWords = words.Select(word => word.Split(' ')).Select(letters => string.Join("", letters.Select(morseCode.get))).ToList();
-             return string.Join(" ", translatedWords);
-         }*/
+                
         public static string Decode(string morseCode)
         {
             string newStr = "";
