@@ -201,6 +201,26 @@
 }
         class katas
         {
+            
+   public static long IpsBetween(string start, string end)
+   {
+        long otv =0;
+        string [] first = start.Split('.');
+        string[] second = end.Split(".");
+        for (int i = 0; i< 4; i++)
+        {
+            long diff = Convert.ToInt64(second[i]) - Convert.ToInt64(first[i]);
+            switch(i)
+            {
+                case 0: otv += diff * (256 * 256 * 256); break;
+                case 1: otv += diff * (256 * 256); break;
+                case 2: otv += diff * 256; break;
+                default: otv += diff; break;
+            }
+        }            
+        return otv;
+   }
+
                 
         public static string Decode(string morseCode)
         {
@@ -292,6 +312,7 @@
             }
             return str;
         }
+        //Console.WriteLine(Maskify("werwer"));
         public static string Maskify(string cc)
         {
             char[] newS = cc.ToCharArray();
