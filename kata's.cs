@@ -201,8 +201,17 @@
 }
         class katas
         {
-            
-   public static long IpsBetween(string start, string end)
+            //Console.WriteLine(GetReadableTime(0));
+        public static string GetReadableTime(int seconds)
+            {
+                string time = "";
+                int sec = seconds % 60; int min = (seconds / 60) % 60; int hours = seconds / 3600 ;
+                if (hours < 10) { time += "0" + hours + ":"; } else { time += hours + ":"; }
+                if (min < 10) { time += "0" + min + ":"; } else { time += min + ":"; }
+                if (sec < 10) { time += "0" + sec ; } else { time += sec; }
+                return time;
+            }
+        public static long IpsBetween(string start, string end)
    {
         long otv =0;
         string [] first = start.Split('.');
