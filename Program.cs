@@ -5,6 +5,9 @@
             // System.Console.WriteLine("что бы добавить класс в проект: dotnet add toProject reference fromClass/FromProject");
             // System.Console.WriteLine("Создать солютион: dotnet new sln -n 'nameSLN', a затем 'dotnet sln add namesClassLibs', по одному");
        
-    Console.WriteLine("Hello, World!");
+       
+    
+    Console.WriteLine(" +\"\"\"\"\"+\n(| o o |)\n |  ^  |\n | '-' |\n +-----+");   
+    Console.WriteLine("Hello, World!23");
     System.Console.WriteLine(MorseCodeDecoder.DecodeBits("1100110011001100000011000000111111001100111111001111110000000000000011001111110011111100111111000000110011001111110000001111110011001100000011"));    
 
