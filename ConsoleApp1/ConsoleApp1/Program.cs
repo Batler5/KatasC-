@@ -5,7 +5,9 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text.RegularExpressions;
 
-//Console.WriteLine(GetCharsCount("abcdefghijklmnabcdefghijklmn", new char[] { 'a', 'c', 'd', 'l', 'm' }, 1, 16, 7));
+Console.WriteLine(GetCharsCount("abcdefghijklmnabcdefghijklmn", new char[] { 'a', 'c', 'd', 'l', 'm' }, 1, 16, 7));
+Console.ReadLine();
+
 static int GetCharsCount(string str, char[] chars, int startIndex, int endIndex, int limit)
 {
     if (str == null)
