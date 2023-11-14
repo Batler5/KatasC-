@@ -36,7 +36,14 @@ static string InsertNumberIntoAnother(int destinationNumber, int sourceNumber, i
         bitsSource.Insert(0, sourceNumBinary[sourceNumBinary.Length - a - 1]);
     }
 
-    for (int a = 0; a < 32; a++)
+    for (int a = 0; a < 32 - j - 1; a++)
+    {
+        bitsDest.Append(destNumBinary[a]);
+    }
+
+    bitsDest.Append(bitsSource);
+
+    for (int a = bitsDest.Length; a < 32; a++)
     {
         bitsDest.Append(destNumBinary[a]);
     }
