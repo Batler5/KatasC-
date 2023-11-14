@@ -3,10 +3,78 @@ using System;
 using System.Collections;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
+using System.Text;
 using System.Text.RegularExpressions;
 
-Console.WriteLine(GetCharsCount("abcdefghijklmnabcdefghijklmn", new char[] { 'a', 'c', 'd', 'l', 'm' }, 1, 16, 7));
-Console.ReadLine();
+
+Console.WriteLine(InsertNumberIntoAnother(2728, 655, 3, 8));
+
+static string InsertNumberIntoAnother(int destinationNumber, int sourceNumber, int i, int j)
+{
+    if (i == 32 || i == -1)
+    {
+        throw new ArgumentOutOfRangeException(nameof(i));
+    }
+
+    if (j == 32)
+    {
+        throw new ArgumentOutOfRangeException(nameof(j));
+    }
+
+    if (i > j)
+    {
+        throw new ArgumentException("i more than j.");
+    }
+
+    int ind = j - i + 1;
+    string sourceNumBinary = NumOnBinary(sourceNumber);
+    string destNumBinary = NumOnBinary(destinationNumber);
+    StringBuilder bitsSource = new StringBuilder();
+    StringBuilder bitsDest = new StringBuilder();
+    for (int a = 0; a < ind; a++)
+    {
+        bitsSource.Append(sourceNumBinary[sourceNumBinary.Length - a - 1]);
+    }
+    Console.WriteLine(bitsSource);
+    for (int a = 0; a < destNumBinary.Length - bitsSource.Length; a++)
+    {
+        if (bitsDest.Length > i && bitsDest.Length <= j)
+        {
+            bitsDest.Append(bitsSource.ToString());
+        }
+        else
+        {
+            bitsDest.Append(destNumBinary[a]);
+        }
+    }
+
+    return bitsDest.ToString();
+}
+
+static string NumOnBinary(int number)
+{
+    bool temp = number >= 0;
+    StringBuilder rez = new StringBuilder();
+
+    while (number != 0)
+    {
+        if (number % 2 == 0)
+        {
+            rez.Insert(0, "0");
+            number /= 2;
+        }
+        else
+        {
+            rez.Insert(0, "1");
+            number /= 2;
+        }
+    }
+
+    return temp ? rez.ToString().PadLeft(64, '0') : rez.ToString().PadLeft(64, '1');
+}
+
+// Console.WriteLine(GetCharsCount("abcdefghijklmnabcdefghijklmn", new char[] { 'a', 'c', 'd', 'l', 'm' }, 1, 16, 7));
+// Console.ReadLine();
 
 static int GetCharsCount(string str, char[] chars, int startIndex, int endIndex, int limit)
 {
@@ -78,8 +146,8 @@ static int GetCharsCount(string str, char[] chars, int startIndex, int endIndex,
 }
 
 
-Console.WriteLine(StripCommentsSolution.StripComments("apples, pears # and bananas\ngrapes\nbananas !apples\n   \nasd", new string[] { "#", "!" }));
-Console.ReadLine();
+// Console.WriteLine(StripCommentsSolution.StripComments("apples, pears # and bananas\ngrapes\nbananas !apples\n   \nasd", new string[] { "#", "!" }));
+// Console.ReadLine();
 public class StripCommentsSolution
 {
     public static string StripComments(string text, string[] commentSymbols)
