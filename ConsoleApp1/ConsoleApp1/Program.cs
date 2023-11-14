@@ -9,7 +9,7 @@ using System.Text.RegularExpressions;
 
 Console.WriteLine(InsertNumberIntoAnother(2728, 655, 3, 8));
 
-static string InsertNumberIntoAnother(int destinationNumber, int sourceNumber, int i, int j)
+static int InsertNumberIntoAnother(int destinationNumber, int sourceNumber, int i, int j)
 {
     if (i == 32 || i == -1)
     {
@@ -48,7 +48,27 @@ static string InsertNumberIntoAnother(int destinationNumber, int sourceNumber, i
         bitsDest.Append(destNumBinary[a]);
     }
 
-    return bitsDest.ToString();
+    Console.WriteLine(bitsDest.Length);
+    return ConvertBinaryToInt32(bitsDest.ToString());
+}
+
+static int ConvertBinaryToInt32(string binary)
+{
+    int result = 0;
+    int power = 0;
+
+    // Проходим по каждому символу в обратном порядке
+    for (int i = binary.Length - 1; i >= 0; i--)
+    {
+        // Если символ равен '1', добавляем соответствующую степень двойки к результату
+        if (binary[i] == '1')
+        {
+            result += (int)Math.Pow(2, power);
+        }
+        power++;
+    }
+
+    return result;
 }
 
 static string NumOnBinary(int number)
