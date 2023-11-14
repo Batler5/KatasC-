@@ -33,19 +33,12 @@ static string InsertNumberIntoAnother(int destinationNumber, int sourceNumber, i
     StringBuilder bitsDest = new StringBuilder();
     for (int a = 0; a < ind; a++)
     {
-        bitsSource.Append(sourceNumBinary[sourceNumBinary.Length - a - 1]);
+        bitsSource.Insert(0, sourceNumBinary[sourceNumBinary.Length - a - 1]);
     }
-    Console.WriteLine(bitsSource);
-    for (int a = 0; a < destNumBinary.Length - bitsSource.Length; a++)
+
+    for (int a = 0; a < 32; a++)
     {
-        if (bitsDest.Length > i && bitsDest.Length <= j)
-        {
-            bitsDest.Append(bitsSource.ToString());
-        }
-        else
-        {
-            bitsDest.Append(destNumBinary[a]);
-        }
+        bitsDest.Append(destNumBinary[a]);
     }
 
     return bitsDest.ToString();
@@ -70,7 +63,7 @@ static string NumOnBinary(int number)
         }
     }
 
-    return temp ? rez.ToString().PadLeft(64, '0') : rez.ToString().PadLeft(64, '1');
+    return temp ? rez.ToString().PadLeft(32, '0') : rez.ToString().PadLeft(32, '1');
 }
 
 // Console.WriteLine(GetCharsCount("abcdefghijklmnabcdefghijklmn", new char[] { 'a', 'c', 'd', 'l', 'm' }, 1, 16, 7));
